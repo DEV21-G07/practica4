@@ -2,12 +2,15 @@
 
 # El proyecto
 
-De la practica 2:
+### De la practica 2:
 El juego existe de un mundo virtual, lo cual debería verse como una fabrica de robots. En ese mundo, el jugador tiene que colectar algunos chips que contienen información sobre la fabrica, y llegar al fin para extraer esa información.
 
 Para llegar al fin, el jugador tiene que recoger tarjetas que le dan entrada a diferentes partes de la fabrica, donde tiene que buscar los chips. Pero mientras está navegándose por la fabrica, el jugador va a encontrarse con robots que le quieren parar y matar.  Los robots perseguirán al jugador si lo pueden ver, si no siguen su camino a puntos fijos y a veces aleatorios (depende del tipo de enemigo - en mi juego hay dos tipos, lo que se explica en https://github.com/DEV21-G07/practica2/wiki/Las-pruebas en la parte sobre "Los enemigos").
 
 El jugador puede disparar al robot para defenderse (pero lo mejor es evitarlos) y puede destruir los spawners de los robots para qué dejan de aparecer en el mundo. Disparando va perdiendo balas, por eso hay paquetes de munición que se puede recoger para tener más balas. Los robots también pueden dañar al jugador, quitándose las vidas. Después de un tiempo esas vidas se recuperan.
+
+### Esta practica:
+En esta practica, nos enfocamos en efectos visuales, tal como animaciones, efectos electricos, ... Los robots estarán animados de manera diferente según estén quietos, caminen o corran. También podrán golpear al jugador y a objetos que se encuentran en su camino. Los robots también tendran animación de muerte, y justo antes de morir caminaran como que son heridos, y van mas lento. A hacerle dano a los robots, le saldran chispas, y al matarlo habrá explosiones y -con cierta probabilidad- incendios que pueden propagarse y afectar a otros personajes. Con el generacion de los robots habrá mucha luz, sonido y descargas eléctricas.
 
 ----
 
