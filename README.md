@@ -7,7 +7,7 @@ Para llegar al fin, el jugador tiene que recoger tarjetas que le dan entrada a d
 
 El jugador puede disparar al robot para defenderse (pero lo mejor es evitarlos) y puede destruir los spawners de los robots para qué dejan de aparecer en el mundo. Disparando va perdiendo balas, por eso hay paquetes de munición que se puede recoger para tener más balas. Los robots también pueden dañar al jugador, quitándose las vidas. Después de un tiempo esas vidas se recuperan.
 
-### Esta practica:
+### De la practica 4:
 En esta practica, nos enfocamos en efectos visuales, tal como animaciones, efectos electricos, ... Los robots estarán animados de manera diferente según estén quietos, caminen o corran. También podrán golpear al jugador y a objetos que se encuentran en su camino. Los robots también tendran animación de muerte, y justo antes de morir caminaran como que son heridos, y van mas lento. A hacerle dano a los robots, le saldran chispas, y al matarlo habrá explosiones y -con cierta probabilidad- incendios que pueden propagarse y afectar a otros personajes. Con el generacion de los robots habrá mucha luz, sonido y descargas eléctricas.
 
 ----
@@ -37,6 +37,20 @@ El emigrar el proyecto o un nuevo proyecto me ha costado mas de lo que pensaba q
 Ya que era algo muy simple, lo he hecho antes de empezar con la practica de verdad. Querria que no se vuelve muy rojo demasiado temprano, pero no salio muy bien en la practica anterior. Asi que ahora, el arma empieza a ponerse roja cuando solo quedan menos de 10 balas. Empiezas con 20, asi que las primeras balas, el arma se queda el mismo color.
 
 #### Animaciones (Dec 9)
+
+##### El robot se muere
+Primero, he buscado en Mixamo para un animacion de alguien muriendo y cayendose al suelo. Como queria seguir usando el robot que ya tenia, que usa un mannequin de ue4, he tenido que hacer un "retarget" de los animaciones. Para eso, he usado el tutorial https://www.youtube.com/watch?v=92rag3qStI4, en donde tuve que cambiar también unas cosas en el mapping del Mannequin. Asi que antes de morirse de verdad, el robot hara esta animacion.
+
+##### El robot puede dar golpes
+Para esto también he encontrado el animacion en Mixamo, tenia que ser una animacion que puede hacer un loop rapido, y que no dura como 4 segundos antes de regresar a su posicion inicial. En el codigo, al darle dano al jugador, el robot tiene que ejecutar esta animacion mientras esta tocando el jugador (o luego el objeto que esta en su camino).
+
+##### Modos del robot: quieto, caminar y correr (herido vs. no herido)
+Ya que ue4 ya cambia los animaciones de un personaje cuando va mas rapido o mas lento, solo tenia que cambiar la velocidad cuando el robot ha visto el jugador.
+
+También querria al hacerle dano al robot, que se va moviendo de una manera herida. Por eso, he econtrado en Mixamo 3 animaciones que se pueden seguir el uno al otro: estando quieto, caminando y corriendo, todos de forma herida. Por eso, en el .... TODO
+
+#### Efectos visuales (Dec 10)
+
 
 ## Postproducción ()
 
