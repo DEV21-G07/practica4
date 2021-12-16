@@ -1,5 +1,3 @@
-# practica4
-
 # El proyecto
 
 ### De la practica 2:
@@ -16,17 +14,21 @@ En esta practica, nos enfocamos en efectos visuales, tal como animaciones, efect
 
 # Proceso
 
-## Preproducción ()
+## Preproducción (Nov 1)
 
 #### Prototipos
+Para tener un poco mas claro la idea de los efectos, hicimos en clase un proyecto usando el Niagara system de ue4. Cuando el personaje esta corriendo, queremos que sale una nube de polvo en el suelo, que se desaparece después de un tiempo. Aunque no usarémos este efecto en la practica, es bien entender como funciona.
 
 #### Estética 
+Ya que el juego ya estaba hecho, solo tuve que pensar en que herramientas deberia usar para los animaciones y los efectos. Al fin decidi usar Mixamo, ya que parece que tienen muchos animaciones, ya ya habia podido encontrar animaciones para golpes y morirse.
 
+Para la mayoria de los efectos, fui buscando en los content examples que tiene ue4. Los "effect gallery" y "lighting gallery" me han dado mucho inspiracion sobre como hacer los efectos de electricidad y chispes, etc.
 
 #### Planificación
+Primero, tendré que mover el proyecto sin quedarme con todos los objetos que no necesito y que me dan los 22GB de la practica 2. Después, me parece importante primero hacer todo - o casi todo - lo que pide la practica 4, antes de ir mejorando las cosas de la practica anterior. Asi que empecaré con los efectos y animaciones, y después iré mejorando todo.
+
 
 ## Produccion
-
 
 ## Postproducción ()
 
