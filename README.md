@@ -30,6 +30,14 @@ Primero, tendré que mover el proyecto sin quedarme con todos los objetos que no
 
 ## Produccion
 
+#### Mover la practica 2 (Dec 3)
+El emigrar el proyecto o un nuevo proyecto me ha costado mas de lo que pensaba que iba a costar. Hubieron problemas con el jugador que ya no entro en el juego al spawn, y el mapping de los teclados. Al fin todo se ha resuelto y ahora pesa menos el proyecto.
+
+#### Resolver el color del arma (Dec 4)
+Ya que era algo muy simple, lo he hecho antes de empezar con la practica de verdad. Querria que no se vuelve muy rojo demasiado temprano, pero no salio muy bien en la practica anterior. Asi que ahora, el arma empieza a ponerse roja cuando solo quedan menos de 10 balas. Empiezas con 20, asi que las primeras balas, el arma se queda el mismo color.
+
+#### Animaciones (Dec 9)
+
 ## Postproducción ()
 
 
