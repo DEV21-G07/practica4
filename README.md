@@ -39,7 +39,7 @@ Ya que era algo muy simple, lo he hecho antes de empezar con la practica de verd
 #### Animaciones (Dec 9)
 
 ##### El robot se muere
-Primero, he buscado en Mixamo para un animacion de alguien muriendo y cayendose al suelo. Como queria seguir usando el robot que ya tenia, que usa un mannequin de ue4, he tenido que hacer un "retarget" de los animaciones. Para eso, he usado el tutorial https://www.youtube.com/watch?v=92rag3qStI4, en donde tuve que cambiar también unas cosas en el mapping del Mannequin. Asi que antes de morirse de verdad, el robot hara esta animacion.
+Primero, he buscado en Mixamo para un animacion de alguien muriendo y cayendose al suelo. Como queria seguir usando el robot que ya tenia, que usa un mannequin de ue4, he tenido que hacer un "retarget" de los animaciones. Para eso, he usado el tutorial https://www.youtube.com/watch?v=92rag3qStI4, en donde tuve que cambiar también unas cosas en el mapping del Mannequin. Asi que antes de morirse de verdad, el robot hara esta animacion. Tuve que anadir un notify para que el robot solo se muera antes de acabar con el animacion, porque poner un "Destroy" en el mismo event graph donde llamas al animacion, destruye inmediatamante al robot (tendria que poner un delay, pero no me parecia la mejor solucion).
 
 ##### El robot puede dar golpes
 Para esto también he encontrado el animacion en Mixamo, tenia que ser una animacion que puede hacer un loop rapido, y que no dura como 4 segundos antes de regresar a su posicion inicial. En el codigo, al darle dano al jugador, el robot tiene que ejecutar esta animacion mientras esta tocando el jugador (o luego el objeto que esta en su camino).
@@ -49,10 +49,34 @@ Ya que ue4 ya cambia los animaciones de un personaje cuando va mas rapido o mas 
 
 También querria al hacerle dano al robot, que se va moviendo de una manera herida. Por eso, he econtrado en Mixamo 3 animaciones que se pueden seguir el uno al otro: estando quieto, caminando y corriendo, todos de forma herida. Por eso, en el .... TODO
 
-#### Efectos visuales (Dec 10)
+#### Efectos visuales (Dec 10 - Dec 15)
+
+##### Chispas al danar los robots
+Para esto fui al "effects gallery" de ue4 de content examples, y encontré algo que se llamaba "random sparks", era exactamente lo que necesitaba, con sonido y todo. Asi que lo movi a mi proyecto, y activo las chispas cuando el robot esta tocado con una bala del jugador. Ya que el event hit tiene un parametro que da la direccion del hit, podria poner las chispas justo en esa direccion y ese lugar donde la bala ha tocado el robot.
+
+##### Una explosion cuando se muere el robot
+Para esto anadi un explosion al notify del animicion de morirse, para hacer la explosion al fin del animacion. Usé el explosion que ya estaba en el starter pack de ue4. 
+
+##### Electricidad al generar un robot
+Para esto, también usé los "random sparks" del effects gallery. También fui buscando para una luz parpadeante, o por lo menos una inspiracion en el lightning gallery. Ahi encontré algo simular, pero con el logo de ue4. Lo que la luz usaba era un Lightning Function, lo cual he cambiado un poco para mi proyecto, y he agregado luces con ese lightning function al spawner. 
+
+También he buscado en internet un sonido que puede ser el sonido del generador mientras esta generando el robot, lo he importado en el proyecto y ya activo el sonido 4-5 segundos antes de que se aparece un robot.
+
+##### Fuego después de la explosion
+- catch on fire
+- damage
+
+#### Resolver problemas de la practica anterior (Dec 14 - Dec 16)
+
+##### Usar BehaviorTrees para los AIs
+
+##### Un mecanismo de fysica
+
+##### Juntar los enemy classes
 
 
-## Postproducción ()
+## Postproducción (Dec 17)
+
 
 
 ----
@@ -65,11 +89,13 @@ También querria al hacerle dano al robot, que se va moviendo de una manera heri
 - El jugador tiene 10 vidas 
 - Al tocar un robot, el jugador pierde una vida. Después sigue perdiendo vidas cada 1 segundo.
 - El jugador recupera vida cada 5 segundos.
+- Al estar en llamas, el jugador perdera 4 vidas.
 
 **Combate**
 - El jugador pierde balas mientras está disparando.
 - Se puede matar a los robots disparándolos 3 veces.
 - Se puede destruir los spawners disparándolos 3/4/5 veces (depende del nivel).
+- Al destruir los robots, puede ser que habra un fuego que dana al jugador y los robots si estan demasiado cerca.
 
 **Coleccionar**
 - El jugador puede recoger munición caminando sobre el objeto o tocándolo.
@@ -77,11 +103,13 @@ También querria al hacerle dano al robot, que se va moviendo de una manera heri
 - El jugador puede recoger chips caminando sobre el objeto o tocándolo.
 - Se puede abrir puertas si tiene una tarjeta de entrada.
 - Se puede abrir la puerta final si tiene todos los chips.
+- El jugador tiene que disparar a los cubos grande para pasar pasillos, ...
 
 ### Dinámica
 - El jugador necesita evitar o matar a los robots para que no se muera. Necesita acumular munición para seguir disparando.
 - Se necesita coleccionar tarjetas de entradas, para superar a la parte actual del mapa y seguir a una otra parte.
 - El jugador se va juntando todos los chips del nivel. Así podrá abrir la ultima puerta y acabar con el juego.
+- El jugador podra danar varios robots de una vez, si destruye a un robot y la explosion (que a veces no hay) le afecta a los otros robots.
 
 ### Estética
 - El mundo debería verse como una fabrica real, para que el jugador se siente realmente adentro de una fabrica de robots.
