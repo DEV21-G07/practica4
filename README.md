@@ -81,7 +81,17 @@ Tuve que cambiar la logica a BehaviorTrees, no fue muy dificil ya que es mucho m
 
 ## Postproducción (Dec 17)
 
+#### Bug durante el robot se muere
+En ciertas situaciones el robot no se estaba muriendo y se quedo quieto. Tuve que buscar un poco que fue la razon, despues me di cuenta que eran mas cosas que una que estaban causando el problema. Primero, al morirse no querria que habia mas overlapEvents con el TouchVolume, asi que tuve que desactivarlo. Eso ya ayudo un poco, pero aun habia algo mal. También cuando estaba golpeando a algo, tuve que pararse y hacer la animacion de morir, pero habia codigo que paraba esta animacion y por eso no se moria. Asi que he anadido un check para ver si se puede parar el animacion o no.
 
+#### Bug durante los golpes del robot
+Habia otro bug con los golpes del robot: a veces salieron None errors al llamar una funcion de lo que esta golpeando el robot. Asi que tuve que verificar si el objeto es valido (si sigue en overlap) o no.
+
+#### Mejorar animacion de fuego
+Cuando se muere el robot en llamas, el fuego no estaba siguendo el animacion porque le hice el spawn del fuego en el cuerpo y no en un hueso o socket. Asi que anadi un socket al skeleton del robot para poner ahi el fuego.
+
+#### Destruir el spawner
+Por alguna razon ya no se podia destruir los spawners, tuve que jugar un poco con los collision settings del FirstPersonProjectile y del collisionBox del spawner.
 
 ----
 
