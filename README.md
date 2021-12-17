@@ -66,42 +66,43 @@ Para esto, también usé los "random sparks" del effects gallery. También fui b
 
 También he buscado en internet un sonido que puede ser el sonido del generador mientras está generando el robot, lo he importado en el proyecto y ya activo el sonido 4-5 segundos antes de que se aparece un robot.
 
-##### Fuego después de la explosion
-Para esto he encontrado un Particle System en los content examples, tienes que ponerlo en los huesos o socket del skeleton del personaje. El juego danara a los robots hasta que se mueren, el jugador solo perdera la mitad de sus vidas. Usando random integers, hay una posibilidad de que si o no coges fuego.
+
+##### Fuego después de la explosión
+Para esto he encontrado un Particle System en los content examples, tienes que ponerlo en los huesos o socket del esqueleto del personaje. El juego dañará a los robots hasta que se mueren, el jugador solo perderá la mitad de sus vidas. Usando random integers, hay una posibilidad de que si o no coges fuego.
 
 #### Resolver problemas de la practica anterior (Dec 14 - Dec 16)
 
 ##### Usar BehaviorTrees para los AIs
-Tuve que cambiar la logica a BehaviorTrees, no fue muy dificil ya que es mucho mas facil y simple que intentar de hacer todo en Blueprints. Solo habia un problema: el MoveTo no estaba funcionado en la parte Patrol del BehaviorTree. Por eso, he escrito mi propio MoveTo que funciona casi igual al MoveTo, solo que elige en el MoveTo mismo a donde ir (asi que es mas como un RandomMoveTo).
+Tuve que cambiar la lógica a BehaviorTrees, no fue muy difícil, ya que es mucho más fácil y simple que intentar de hacer todo en Blueprints. Solo había un problema: el MoveTo no estaba funcionado en la parte Patrol del BehaviorTree. Por eso, he escrito mi propio MoveTo que funciona casi igual al MoveTo, solo que elige en el MoveTo mismo a donde ir (así que es más como un RandomMoveTo).
 
-##### Un mecanismo de fysica
-Para esto, eligi bloques que se pueden mover de forma fysica. Para el jugador era facil: solo le cambie el PushForce para que ya no puede mover los bloques, solo los puede mover disparandolos porque los disparos tienen mucha fuerza.
+##### Un mecanismo de física
+Para esto, elegí bloques que se pueden mover de forma física. Para el jugador era fácil: solo le cambié el PushForce para que ya no puede mover los bloques, solo los puede mover disparándolos porque los disparos tienen mucha fuerza.
 
-Para el enemigo tuve que poner codigo en los bloques que reaccionan al ser golpeado por los robots.
+Para el enemigo tuve que poner código en los bloques que reaccionan al ser golpeado por los robots.
 
 ##### Juntar los enemy classes
-Ya que habia cambiado mucho en el EnemyCharacter, me di cuenta que es un poco "tonto" tener que hacerlo en el otro. Asi que decidi juntarlos y borrar el StrongEnemyCharacter ya que ahora tienen mucho mas codigo.
+Ya que había cambiado mucho en el EnemyCharacter, me di cuenta de que es un poco "tonto" tener que hacerlo en el otro. Así que decidí juntarlos y borrar el StrongEnemyCharacter, porque ahora tienen mucho más código.
 
 ##### Personalizar el mundo
 He puesto en barriles "Dest: Freya's robot factory" para verse un poco como acaban de llegar de una entrega. También hay un cartel que dice "Engineering departement F.R.E.Y.A" en el pasillo de la sala 2.
 
-##### (Amplificar el escanario)
-Al fin, no he llegado a esto, aunque hubiera sido bien para poner mas generadores etc.
+##### (Amplificar el escenario)
+Al fin, no he llegado a esto, aunque hubiera sido bien para poner más generadores etc.
 
 
 ## Postproducción (Dec 17)
 
 #### Bug durante el robot se muere
-En ciertas situaciones el robot no se estaba muriendo y se quedo quieto. Tuve que buscar un poco que fue la razon, despues me di cuenta que eran mas cosas que una que estaban causando el problema. Primero, al morirse no querria que habia mas overlapEvents con el TouchVolume, asi que tuve que desactivarlo. Eso ya ayudo un poco, pero aun habia algo mal. También cuando estaba golpeando a algo, tuve que pararse y hacer la animacion de morir, pero habia codigo que paraba esta animacion y por eso no se moria. Asi que he anadido un check para ver si se puede parar el animacion o no.
+En ciertas situaciones el robot no se estaba muriendo y se quedó quieto. Tuve que buscar un poco que fue la razón, después me di cuenta de que eran más cosas que una que estaban causando el problema. Primero, al morirse no querría que había más overlapEvents con el TouchVolume, así que tuve que desactivarlo. Eso ya ayudo un poco, pero aún había algo mal. También cuando estaba golpeando a algo, tuve que pararse y hacer la animación de morir, sin embargo, había código que paraba esta animación y por eso no se moria. Así que he añadido un check para ver si se puede parar la animación o no.
 
 #### Bug durante los golpes del robot
-Habia otro bug con los golpes del robot: a veces salieron None errors al llamar una funcion de lo que esta golpeando el robot. Asi que tuve que verificar si el objeto es valido (si sigue en overlap) o no.
+Había otro bug con los golpes del robot: a veces salieron None errors al llamar una función de lo que está golpeando el robot. Así que tuve que verificar si el objeto es válido (si sigue en overlap) o no.
 
-#### Mejorar animacion de fuego
-Cuando se muere el robot en llamas, el fuego no estaba siguendo el animacion porque le hice el spawn del fuego en el cuerpo y no en un hueso o socket. Asi que anadi un socket al skeleton del robot para poner ahi el fuego.
+#### Mejorar animación de fuego
+Cuando se muere el robot en llamas, el fuego no estaba siguiendo la animación porque le hice el spawn del fuego en el cuerpo y no en un hueso o socket. Así que añadí un socket al esqueleto del robot para poner ahí el fuego.
 
 #### Destruir el spawner
-Por alguna razon ya no se podia destruir los spawners, tuve que jugar un poco con los collision settings del FirstPersonProjectile y del collisionBox del spawner.
+Por alguna razón ya no se podía destruir los spawners, tuve que jugar un poco con los colission settings del FirstPersonProjectile y del collisionBox del spawner.
 
 ----
 
