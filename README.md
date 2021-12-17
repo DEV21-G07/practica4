@@ -120,6 +120,8 @@ Por alguna razon ya no se podia destruir los spawners, tuve que jugar un poco co
 - Se puede matar a los robots disparándolos 3 veces.
 - Se puede destruir los spawners disparándolos 3/4/5 veces (depende del nivel).
 - Al destruir los robots, puede ser que habra un fuego que dana al jugador y los robots si estan demasiado cerca.
+- Los robots mueren después de algunos segundos en llamas, pero pueden seguir atacando.
+- El jugador podra usar los cubos grandes para interrumpir el camino de los robots.
 
 **Coleccionar**
 - El jugador puede recoger munición caminando sobre el objeto o tocándolo.
@@ -137,11 +139,16 @@ Por alguna razon ya no se podia destruir los spawners, tuve que jugar un poco co
 
 ### Estética
 - El mundo debería verse como una fabrica real, para que el jugador se siente realmente adentro de una fabrica de robots.
+  - Ayudan los efectos elektronicos mientras se esta generando un robot
+  - Ayudan las chispas que le salen del robot al dispararlo
+  - Ayuda la explosion despues de destruir un robot
+  - El fuego después de la explosion puede hacer que el jugador se siente mas cuidadoso al destruir un robot
 - El jugador necesita tener miedo de no saber de donde vienen los robots, no debería ser obvio donde está el spawner. Al descubrirlo se sentirá aliviado.
 - Dará susto descubrir un robot fuerte detrás de una esquina, la apariencia de esos robots darán más miedo que los robots normales.
 - En alguna parte el jugador puede abrir la puerta equivocada si va avanzando demasiado rápido, tendrá que volver lo que le da frustración pero también curiosidad por no haber descubierto algo antes.
 - En alguna parte también hay que mirar bien que no se ha perdido un chip que está un poco escondido.  Aquí también tendrá que regresar, para buscarlo. Si ha acabado con todos los spawners se sentirá tranquilo, sin mucho apuro, si no será más miedoso y difícil.
 - El acercarse de los robots al jugador tiene que darle miedo, cuando está perdiendo vidas también habrá un efecto de la vista que se da cuenta de que se va a perder su vida.
+
 
 
 
