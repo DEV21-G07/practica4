@@ -49,7 +49,7 @@ Para esto también he encontrado el animacion en Mixamo, tenia que ser una anima
 ##### Modos del robot: quieto, caminar y correr (herido vs. no herido)
 Ya que ue4 ya cambia los animaciones de un personaje cuando va mas rapido o mas lento, solo tenia que cambiar la velocidad cuando el robot ha visto el jugador.
 
-También querria al hacerle dano al robot, que se va moviendo de una manera herida. Por eso, he econtrado en Mixamo 3 animaciones que se pueden seguir el uno al otro: estando quieto, caminando y corriendo, todos de forma herida. Por eso, en el .... TODO
+También querria al hacerle dano al robot, que se va moviendo de una manera herida. Por eso, he econtrado en Mixamo 3 animaciones que se pueden seguir el uno al otro: estando quieto, caminando y corriendo, todos de forma herida. Por eso, he creado un nuevo BlendSpace ThirdPerson_IdleRunInjured con las animaciones de los robots heridos y sus transisiones. En el animacion ThirdPerson_AnimBP en el eventGraph tengo un variable isInjured que se cambia para ver cuantas vidas tiene el robot. En el animGraph he creado un nuevo stateMachine (injured vs. default) y he usado un BlendPosesByBool que depende del variable isInjured. Los dos estados injured y default estan "synced" para tener una transision correcta.
 
 #### Efectos visuales (Dec 10 - Dec 15)
 
@@ -65,16 +65,18 @@ Para esto, también usé los "random sparks" del effects gallery. También fui b
 También he buscado en internet un sonido que puede ser el sonido del generador mientras esta generando el robot, lo he importado en el proyecto y ya activo el sonido 4-5 segundos antes de que se aparece un robot.
 
 ##### Fuego después de la explosion
-- catch on fire
-- damage
+Para esto he encontrado un Particle System en los content examples, tienes que ponerlo en los huesos o socket del skeleton del personaje. El juego danara a los robots hasta que se mueren, el jugador solo perdera la mitad de sus vidas. Usando random integers, hay una posibilidad de que si o no coges fuego.
 
 #### Resolver problemas de la practica anterior (Dec 14 - Dec 16)
 
 ##### Usar BehaviorTrees para los AIs
+Tuve que cambiar la logica a BehaviorTrees, no fue muy dificil ya que es mucho mas facil y simple que intentar de hacer todo en Blueprints. Solo habia un problema: el MoveTo no estaba funcionado en la parte Patrol del BehaviorTree. Por eso, he escrito mi propio MoveTo que funciona casi igual al MoveTo, solo que elige en el MoveTo mismo a donde ir (asi que es mas como un RandomMoveTo).
 
 ##### Un mecanismo de fysica
 
 ##### Juntar los enemy classes
+
+##### Personalizar el mundo
 
 
 ## Postproducción (Dec 17)
