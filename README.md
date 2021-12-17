@@ -16,10 +16,12 @@ En esta practica, nos enfocamos en efectos visuales, tal como animaciones, efect
 
 # Proceso
 
-## Preproducción (Nov 1)
+## Preproducción (Dec 4)
 
 #### Prototipos
 Para tener un poco mas claro la idea de los efectos, hicimos en clase un proyecto usando el Niagara system de ue4. Cuando el personaje esta corriendo, queremos que sale una nube de polvo en el suelo, que se desaparece después de un tiempo. Aunque no usarémos este efecto en la practica, es bien entender como funciona.
+
+También segui este tutorial https://www.youtube.com/watch?v=92rag3qStI4, para intentar de hacer un animacion con Mixamo.
 
 #### Estética 
 Ya que el juego ya estaba hecho, solo tuve que pensar en que herramientas deberia usar para los animaciones y los efectos. Al fin decidi usar Mixamo, ya que parece que tienen muchos animaciones, ya ya habia podido encontrar animaciones para golpes y morirse.
@@ -73,10 +75,18 @@ Para esto he encontrado un Particle System en los content examples, tienes que p
 Tuve que cambiar la logica a BehaviorTrees, no fue muy dificil ya que es mucho mas facil y simple que intentar de hacer todo en Blueprints. Solo habia un problema: el MoveTo no estaba funcionado en la parte Patrol del BehaviorTree. Por eso, he escrito mi propio MoveTo que funciona casi igual al MoveTo, solo que elige en el MoveTo mismo a donde ir (asi que es mas como un RandomMoveTo).
 
 ##### Un mecanismo de fysica
+Para esto, eligi bloques que se pueden mover de forma fysica. Para el jugador era facil: solo le cambie el PushForce para que ya no puede mover los bloques, solo los puede mover disparandolos porque los disparos tienen mucha fuerza.
+
+Para el enemigo tuve que poner codigo en los bloques que reaccionan al ser golpeado por los robots.
 
 ##### Juntar los enemy classes
+Ya que habia cambiado mucho en el EnemyCharacter, me di cuenta que es un poco "tonto" tener que hacerlo en el otro. Asi que decidi juntarlos y borrar el StrongEnemyCharacter ya que ahora tienen mucho mas codigo.
 
 ##### Personalizar el mundo
+He puesto en barriles "Dest: Freya's robot factory" para verse un poco como acaban de llegar de una entrega. También hay un cartel que dice "Engineering departement F.R.E.Y.A" en el pasillo de la sala 2.
+
+##### (Amplificar el escanario)
+Al fin, no he llegado a esto, aunque hubiera sido bien para poner mas generadores etc.
 
 
 ## Postproducción (Dec 17)
