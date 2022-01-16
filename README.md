@@ -154,7 +154,7 @@ Por alguna razón ya no se podía destruir los spawners, tuve que jugar un poco 
 
 
 ## Contenido
-Todas las siguientes partes se encuentra en el wiki:  https://github.com/DEV21-G07/practica2/wiki/Las-pruebas
+Todas las siguientes partes se encuentra en el wiki:  https://github.com/DEV21-G07/practica4/wiki/Las-pruebas
 ### Los enemigos
 ### Los objetos especiales 
 ### Los niveles
